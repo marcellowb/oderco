@@ -6,8 +6,6 @@ use App\Http\Requests\CalculoImpostoRequest;
 use App\Http\Requests\CotacaoRequest;
 use App\Models\CotacaoFrete;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 
 class CotacaoFreteController extends Controller
 {
@@ -81,7 +79,7 @@ class CotacaoFreteController extends Controller
 
     private function selecionaLimiteCotacoes()
     {
-        $this->listaCotacoes = array_slice($this->listaCotacoes, 0, 3);
+        $this->listaCotacoes = array_slice($this->listaCotacoes, 0, self::LIMITE_COTACOES);
     }
 
 }
